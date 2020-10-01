@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
-const port = process.env.PORT
+const port = 5000;
 const user = process.env.DB_USER;
 const password = process.env.DB_PASSWORD;
 const dbname = process.env.DB_NAME;
@@ -69,4 +69,4 @@ client.connect(err => {
 
 });
 
-app.listen(port);
+app.listen(process.env.PORT || port);
